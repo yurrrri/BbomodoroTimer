@@ -7,13 +7,23 @@
     android:background="@color/tomato"
     tools:context=".MainActivity">
 
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/tvMinute"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_img_tomato_stem" />
+
     <TextView
         android:id="@+id/tvMinute"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="00"
+        android:text="00'"
         android:textColor="@color/white"
-        android:textSize="64sp"
+        android:textSize="120sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/tvSecond"
         app:layout_constraintHorizontal_chainStyle="packed"
@@ -27,18 +37,22 @@
         android:layout_height="wrap_content"
         android:text="00"
         android:textColor="@color/white"
-        android:textSize="64sp"
+        android:textSize="70sp"
         app:layout_constraintBottom_toBottomOf="@+id/tvMinute"
         app:layout_constraintLeft_toRightOf="@id/tvMinute"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/tvMinute"
+        app:layout_constraintBaseline_toBaselineOf="@id/tvMinute"
         tools:ignore="HardcodedText" />
 
+    <!--thumb : progressbar의 움직이는 버튼? -->
+    <!--marginHorizontal : 양쪽에 모두 margin을 주는것 ,,, 꿀팁이군 -->
     <SeekBar
         android:id="@+id/seekBar"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
         android:max="60"
+        android:thumb="@drawable/ic_progress"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
